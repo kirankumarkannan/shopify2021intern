@@ -1,1 +1,34 @@
+1) How many orders were shipped by Speedy Express in total?
+
+SELECT COUNT(O.OrderID) as Numbers
+FROM Orders as O 
+JOIN Shippers as S ON O.ShipperID = S.ShipperID 
+WHERE S.ShipperName = 'Speedy Express'
+
+Result:54
+
+
+
+
+
+
+
+2)What is the last name of the employee with the most orders?
+
+FROM Employees as E
+JOIN Orders as O
+ON E.EmployeeID = O.EmployeeID
+GROUP BY O.EmployeeID
+ORDER BY count(*) DESC
+LIMIT 1
+
+Result: Peacock
+
+
+
+
+
+
+
+3)What product was ordered the most by customers in Germany?
 
