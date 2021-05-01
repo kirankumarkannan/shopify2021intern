@@ -10,9 +10,6 @@ Result:54
 
 
 
-
-
-
 2)What is the last name of the employee with the most orders?
 
 FROM Employees as E
@@ -26,9 +23,20 @@ Result: Peacock
 
 
 
-
-
-
-
 3)What product was ordered the most by customers in Germany?
+
+SELECT P.ProductName
+FROM Products as P
+LEFT JOIN OrderDetails as Ord
+ON P.ProductID = Ord.ProductID 
+LEFT JOIN Orders as O
+ON Ord.OrderID = O.OrderID
+LEFT JOIN Customers as C
+ON O.CustomerID = C.CustomerID
+WHERE Country = 'Germany'
+GROUP BY Ord.ProductID
+ORDER BY COUNT(*) DESC
+LIMIT 1
+
+Result:Gorgonzola Telino
 
