@@ -1,1 +1,1 @@
-# shopify2021intern
+Here is the python and SQL challenge for the data scientist intern position at Shopify.
